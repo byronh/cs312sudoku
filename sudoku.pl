@@ -50,7 +50,30 @@ Sunday, November 18, 2012. */
 
 /* ----------- cut here ----------- */
 
-/* include names and student numbers */
+/* 
+Byron Henze #66809088 l6f7
+Ian Lavery
+ */
+
+minidoku(L) :- worthy(L).
+
+worthy(L) :- valid(L),different(L).
+
+valid([H]) :- validval(H).
+valid([H|T]) :- validval(H),valid(T).
+
+validval(1).
+validval(2).
+validval(3).
+validval(4).
+validval(5).
+validval(6).
+validval(7).
+validval(8).
+validval(9).
+
+different([_]).
+different([H|T]) :- not(member(H,T)),different(T).
 
 /* This runs all the simple tests. If it 
 works correctly, you should see three identical 
@@ -204,7 +227,7 @@ printsudoku([H|T]) :-
 
 
 % Expects a list of lists 9 by 9 grid.
-sudoku(L) :-
+%sudoku(L) :-
 
 % YOU NEED TO COMPLETE THIS PREDICATE, PLUS PROVIDE ANY HELPER PREDICATES BELOW.
 
